@@ -33,6 +33,11 @@ CORS_ALLOWED_ORIGINS = [
     f"http://{host}" for host in ALLOWED_HOSTS if host not in ["*", "localhost", "127.0.0.1"]
 ] + [
     f"https://{host}" for host in ALLOWED_HOSTS if host not in ["*", "localhost", "127.0.0.1"]
+] + [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://localhost:5173",
+    "https://127.0.0.1:5173",
 ]
 
 # CSRF settings - trust the same origins as ALLOWED_HOSTS
@@ -40,6 +45,11 @@ CSRF_TRUSTED_ORIGINS = [
     f"http://{host}" for host in ALLOWED_HOSTS if host not in ["*", "localhost", "127.0.0.1"]
 ] + [
     f"https://{host}" for host in ALLOWED_HOSTS if host not in ["*", "localhost", "127.0.0.1"]
+] + [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://localhost:5173",
+    "https://127.0.0.1:5173",
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
